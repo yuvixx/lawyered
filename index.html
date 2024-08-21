@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <title>Lawyered</title>
     <link rel="stylesheet" href="/static/style.css">
-	<script src="/static/script.js" defer ></script>
+	<script src="/static/app.js" defer ></script>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div class="main">  	
+	<div class="main" id="auth-window">
 		<input type="checkbox" id="chk">
 			<div class="signup">
 				<form id="signup">
@@ -21,17 +21,26 @@
 			</div>
 
 			<div class="login">
-				<form action="/api/signin" method="post">
+				<form id="signin">
 					<label for="chk" aria-hidden="true" style="cursor: pointer;">Login</label>
-					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
+					<input type="email" name="email" placeholder="Email" required>
+					<input type="password" name="password" placeholder="Password" required>
 					<button>Login</button>
 				</form>
 			</div>
 	</div>
-</body>
-</html>
-<!-- partial -->
-  
+	<main id="chat-window">
+		<div class="chat-box">
+			<div class="messages">
+				<div class="bot-message">
+					<p>Hello! How can I assist you today?</p>
+				</div>
+			</div>
+			<div class="chat-input">
+				<input type="text" placeholder="Type here ..." id="user-input">
+				<button id="send">Send</button>
+			</div>
+		</div>
+	</main>
 </body>
 </html>
